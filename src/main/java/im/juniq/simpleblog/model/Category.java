@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table("Category")
+@Table(name = "Category")
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,4 +21,13 @@ public class Category {
     private LocalDateTime createdAt;
     @Column(name = "UPT_DT")
     private LocalDateTime modifiedAt;
+
+    protected Category() {
+    }
+
+    public Category(String name) {
+        this.name = name;
+        this.createdAt = LocalDateTime.now();
+        this.modifiedAt = LocalDateTime.now();
+    }
 }
