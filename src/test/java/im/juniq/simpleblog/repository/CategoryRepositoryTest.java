@@ -22,5 +22,6 @@ class CategoryRepositoryTest {
         Optional<Category> selectedCategory = categoryRepository.findById(savedCategory.getId());
 
         assertThat(savedCategory.getId()).isEqualTo(selectedCategory.get().getId());
+        assertThat(savedCategory.getName()).isEqualTo(selectedCategory.get().getName());
     }
 }
